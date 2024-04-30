@@ -1,0 +1,250 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+/* ==== Start Global Rules ==== */
+
+*{padding: 0; margin: 0; box-sizing: border-box;}
+body {
+    font-family: "Nunito Sans", sans-serif;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+}
+/* ==== reset componant ==== */
+ul {list-style: none;}
+a  {text-decoration: none;}
+:focus {border: none; outline: none;}
+
+/* ==== Start Variable ==== */
+:root {
+    --c-darkGray       : hsl(0, 0%, 52%);
+    --c-white          : hsl(0, 0%, 100%);
+    --c-darkBlue       : hsl(209, 23%, 22%);
+    --c-darkBlueT      : hsl(200, 15%, 8%);
+    --bg-darkBlue      : hsl(207, 26%, 17%);
+    --bg-veryLigthGray : hsl(0, 0%, 98%);
+}
+/* ==== End Variable ==== */
+
+/* ==== Start Media Query ==== */
+.container {
+    padding: 0px 15px;
+    margin: 0px auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/* White Space Problem FIX */
+@media only screen and (max-width:768px) {
+    html,
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+}
+/* ==== End Media Query ==== */
+/* ==== End Global Rules ==== */
+
+/* ==== Start Header ==== */
+header {
+    position: relative;
+    padding: 12px 0px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .container > h1 {
+    font-size: 1.2rem;
+}
+header .container > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+header .container > button > i {
+    margin-right: 5px;
+}
+@media (max-width : 767px) {
+    header .container > h1 {
+        font-size: 0.9rem;
+    }
+}
+/* ==== Strat Nav ==== */
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.search-bar {
+    width: 440px;
+    background-color: #fff;
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+.search-bar i {
+    margin-right: 30px;
+    color: var(--c-darkGray);
+}
+.search-bar input {
+    border: none;
+    color: var(--c-darkGray);
+}
+
+.list {
+    position: relative;
+    cursor: pointer;
+    font-size: 0.9rem;
+    background-color: #fff;
+    padding: 16px 32px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+.list > li > i {
+    margin-left: 30px;
+}
+.regions {
+    position: absolute;
+    width: 100%;
+    padding: 16px 32px;
+    background-color: var(--c-white);
+    left: 0;
+    top: 58px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.show-opacity {
+    opacity: 1;
+    pointer-events: initial;
+}
+.regions > li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+@media (max-width:767px) {
+    nav .container {
+        flex-direction: column;
+    }
+    .search-bar {
+        width: 330px;
+        margin-bottom: 30px;
+    }
+}
+i {
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+/* ==== End Nav ==== */
+/* ==== End Header ==== */
+
+/* ==== Start Main ==== */
+main {
+    padding: 2.5rem 0px;
+    background-color: var(--bg-veryLigthGray);
+    min-height: 100vh;
+}
+main > .container {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(220px , 1fr));
+    gap: 30px;
+}
+.container .box {
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    cursor: pointer;
+}
+.container .box > .flag img {
+    display: block;
+    max-width: 100%;
+    object-fit: contain;
+}
+.container .box .statistics {
+    padding: 16px 23px;
+}
+.container .box .statistics h2 {
+    font-size: 0.9rem;
+    margin: 20px 0px;
+}
+.container .box .statistics div {
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.container .box .statistics div > span {
+    font-weight: normal;
+}
+/* ==== End Main ==== */
+
+/* ==== start utilities ==== */
+.hide   {display: none;}
+.show   {display: block;}
+.turn   { transform:rotate(180deg) ; -webkit-transform:rotate(180deg) ; -moz-transform:rotate(180deg) ; -ms-transform:rotate(180deg) ; -o-transform:rotate(180deg) ; }
+
+.dark-mode header{
+    background-color: var(--c-darkBlue);
+}
+.dark-mode header h1 ,
+.dark-mode button {
+    color: #fff;
+}
+.dark-mode main {
+    background-color: var(--bg-darkBlue);
+}
+.dark-mode main .search-bar ,
+.dark-mode main input ,
+.dark-mode main .list,
+.dark-mode main input::placeholder ,
+.dark-mode main i ,
+.dark-mode main .regions,
+.dark-mode main .box{
+    color: #fff;
+    background-color: var(--c-darkBlue);
+}
+.dark-mode main .box .statistics > div{
+    font-weight: normal;
+}
+.dark-mode main .box span {
+    color: var(--c-darkGray);
+}
+/* ==== End utilities ==== */
