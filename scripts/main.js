@@ -9,7 +9,7 @@ list.addEventListener("click", () => {
 const container = document.querySelector("main > .container");
 
 // connect to API
-let connection = fetch("../API/data.json").then((data) => {
+let connection = fetch("./API/data.json").then((data) => {
     return data.json();
 }).then(myData => {
     for (let i = 0; i < myData.length; i++) {
